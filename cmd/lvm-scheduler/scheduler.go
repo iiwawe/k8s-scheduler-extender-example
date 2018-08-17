@@ -23,7 +23,7 @@ import (
 	"os"
 	"time"
 
-	"bonc.com/lvm-scheduler/cmd/lvm-scheduler/app"
+	"bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app"
 	"github.com/spf13/pflag"
 	utilflag "k8s.io/apiserver/pkg/util/flag"
 	"k8s.io/apiserver/pkg/util/logs"

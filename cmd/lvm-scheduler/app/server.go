@@ -62,9 +62,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/spf13/cobra"
 
-	schedulerserverconfig "bonc.com/lvm-scheduler/cmd/lvm-scheduler/app/config"
-	"bonc.com/lvm-scheduler/cmd/lvm-scheduler/app/options"
-	myalgorithmprovider "bonc.com/lvm-scheduler/pkg/lvm-scheduler/algorithmprovider"
+	schedulerserverconfig "bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app/config"
+	"bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app/options"
+	myalgorithmprovider "bonc.com/k8s-scheduler-extender-example/pkg/lvm-scheduler/algorithmprovider"
 )
 
 // NewSchedulerCommand creates a *cobra.Command object with default parameters

@@ -1,7 +1,7 @@
 package options
 
 import (
-	"bonc.com/lvm-scheduler/cmd/lvm-scheduler/app/config"
+	"bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app/config"
 	"github.com/spf13/pflag"
 )
 

@@ -1,4 +1,4 @@
-package predicates
+package algorithm
 
 import (
 	"encoding/json"
@@ -13,8 +13,8 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/algorithm/predicates"
 	schedulercache "k8s.io/kubernetes/pkg/scheduler/cache"
 
-	"bonc.com/lvm-scheduler/cmd/lvm-scheduler/app/config"
-	"bonc.com/lvm-scheduler/pkg/lvmutils"
+	"bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app/config"
+	"bonc.com/k8s-scheduler-extender-example/pkg/lvmutils"
 )
 
 const (
@@ -37,7 +37,7 @@ func NewLvmPredicate(optional config.AlgorithmOptionalOptional, pvcInfo predicat
 	return lvmChecker.CheckNodeLabelPresence
 }
 
-// ww
+//
 func (lvm *LvmChecker) CheckNodeLabelPresence(pod *v1.Pod, meta algorithm.PredicateMetadata, nodeInfo *schedulercache.NodeInfo) (bool, []algorithm.PredicateFailureReason, error) {
 	nodeName := nodeInfo.Node().Name
 	config, err := buildConfig(lvm.optional.Kubecfg)
@@ -71,8 +71,6 @@ func (lvm *LvmChecker) CheckNodeLabelPresence(pod *v1.Pod, meta algorithm.Predic
 				glog.V(2).Infof("can't get pvc, %s, %s", pod.Namespace, vol.PersistentVolumeClaim.ClaimName)
 				return false, []algorithm.PredicateFailureReason{predicates.ErrNodeUnschedulable}, nil
 			}
-			ss, _ := json.Marshal(pvc)
-			glog.Info(string(ss))
 			capacity := pvc.Spec.Resources.Requests[v1.ResourceStorage]
 			glog.V(2).Infof("capacity: %d, node %s vg free %d", capacity.Value(), nodeName, int64(vg.Free))
 			if capacity.Value() > int64(vg.Free) {

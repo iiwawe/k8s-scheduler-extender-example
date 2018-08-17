@@ -22,7 +22,7 @@ import (
 	"strconv"
 	"testing"
 
-	schedulerappconfig "bonc.com/lvm-scheduler/cmd/lvm-scheduler/app/config"
+	schedulerappconfig "bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app/config"
 	"k8s.io/apimachinery/pkg/util/rand"
 	"k8s.io/kubernetes/cmd/controller-manager/app/options"
 	"k8s.io/kubernetes/pkg/apis/componentconfig"

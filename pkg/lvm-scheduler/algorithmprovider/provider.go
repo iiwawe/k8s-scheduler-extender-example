@@ -6,8 +6,8 @@ import (
 	"k8s.io/kubernetes/pkg/scheduler/algorithm/predicates"
 	"k8s.io/kubernetes/pkg/scheduler/factory"
 
-	schedulerserverconfig "bonc.com/lvm-scheduler/cmd/lvm-scheduler/app/config"
-	lvmalgorithm "bonc.com/lvm-scheduler/pkg/lvm-scheduler/algorithm/predicates"
+	schedulerserverconfig "bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app/config"
+	lvmalgorithm "bonc.com/k8s-scheduler-extender-example/pkg/lvm-scheduler/algorithm"
 )
 
 const (
@@ -33,6 +33,7 @@ func registerAlgorithmProvider(predSet, priSet sets.String) {
 		copyAndReplace(priSet, "LeastRequestedPriority", "MostRequestedPriority"))
 }
 
+//
 func defaultPredicates(lo schedulerserverconfig.AlgorithmOptionalOptional) sets.String {
 	return sets.NewString(
 		factory.RegisterFitPredicateFactory(

@@ -26,7 +26,7 @@ import (
 	"github.com/golang/glog"
 	"github.com/spf13/pflag"
 
-	schedulerappconfig "bonc.com/lvm-scheduler/cmd/lvm-scheduler/app/config"
+	schedulerappconfig "bonc.com/k8s-scheduler-extender-example/cmd/lvm-scheduler/app/config"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/uuid"
